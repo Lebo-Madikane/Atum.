@@ -1,0 +1,64 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-primary;
+    line-height: 1.6;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-secondary;
+    color: var(--color-primary);
+    //margin-bottom: 1rem;
+    //line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+// Links
+a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--color-text-secondary);
+    }
+}
+
+// Images
+img {
+    max-width: 100%;
+    height: auto;
+}
