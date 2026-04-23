@@ -18,8 +18,8 @@ const viga = Viga({
 })
 
 export const metadata = {
-    title: "Ness Beauty Salon - Hair Salon",
-    description: "Experience comfort and styling at Ness Beauty Salon in Cape Town",
+    title: "Atum The Creator - Web Development and Digital Marketing Agency",
+    description: "Experience ",
 };
 
 export default function RootLayout({ children }) {

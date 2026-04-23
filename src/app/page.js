@@ -1,11 +1,21 @@
-import styles from "./page.module.scss"
+import Header from "@/components/Header/Header"
+import Hero from "@/components/Hero/Hero"
+import About from "@/components/About/About"
+import Services from "@/components/Services/Services"
+import CtaForm from "@/components/CtaForm/CtaForm"
+import Footer from "@/components/Footer/Footer"
 
 
 export default function HomePage() {
     return (
-        <div className={styles.homepage}>
+        <div>
             <main>
-                <h1>Atum.</h1>
+                <Header />
+                <Hero />
+                <About />
+                <Services />
+                <CtaForm />
+                <Footer />
             </main>
         </div>
     )
