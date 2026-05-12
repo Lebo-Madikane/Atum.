@@ -1,22 +1,36 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
-.about {
-    border: 2px solid red;
+.aboutSection {
     width: 100%;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    box-shadow: inset 0 60px 80px -60px rgba(0, 0, 0, 0.318), 0 -30px 60px rgba(0, 0, 0, 0.332);
 
-    .container {
-        border: 2px solid yellow;
+    &__container {
+        z-index: 10;
         width: 50%;
-        height: 70%;
         margin: 0 auto;
+        display: flex;
+        gap: 15;
 
         @include mobile {
             width: 90%;
+        }
+
+        &__line {
+            background-color: var(--color-primary);
+            width: 7px;
+            height: 100%;
+            align-self: center;
+        }
+
+        &__paragraph {
+            color: var(--color-text-primary);
+            align-content: center;
         }
     }
 }
