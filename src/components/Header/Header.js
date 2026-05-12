@@ -20,7 +20,6 @@ export default function Header() {
 
                 {/* Desktop Navigation */}
                 <nav className={styles.nav}>
-                    <Link href="/" className={styles.navLink}>Home</Link>
                     <Link href="/#about" className={styles.navLink}>About</Link>
                     <Link href="/services" className={styles.navLink}>Services</Link>
                     <Link href="/#contact" className={styles.navLink}>Contact</Link>

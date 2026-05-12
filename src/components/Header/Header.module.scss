@@ -11,9 +11,10 @@
     z-index: 1000;
 
     .container {
+        width: 98%;
+        margin: 0 auto;
         padding: 1rem;
         height: 70px;
-        @include container;
         @include flex-between;
     }
 }
@@ -21,7 +22,7 @@
 .logo {
     h2 {
         font-family: $font-primary;
-        color: var(--color-primary);
+        color: var(--text-color-primary);
         margin: 0;
         font-size: 2rem;
         font-weight: 600;
@@ -29,7 +30,9 @@
 
     &:hover {
         h2 {
-            color: var(--accent-color);
+            color: var(--color-accent);
+            font-size: 2.1rem;
+            transition: color 0.3s ease;
         }
     }
 }
@@ -45,13 +48,14 @@
 }
 
 .navLink {
-    color: var(--text-dark);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    //font-family: $font-secondary;
 
     &:hover {
-        color: var(--primary-color);
+        color: var(--color-accent);
+        transition: color 0.3s ease;
     }
 
     // Active/hover underline effect
@@ -90,12 +94,12 @@
         display: block;
         height: 3px;
         width: 100%;
-        background-color: var(--color-primary);
+        background-color: var(--color-tertiary);
         border-radius: 2px;
         transition: all 0.3s ease;
 
         &.active {
-            background-color: var(--color-primary);
+            background-color: var(--color-tertiary);
 
             &:nth-child(1) {
                 transform: rotate(45deg) translate(6px, 6px);
@@ -140,14 +144,14 @@
 
 .mobileNavLink {
     padding: 1rem 2rem;
-    color: var(--text-dark);
+    color: var(--color-tertiary);
     font-weight: 500;
     border-bottom: 1px solid var(--secondary-color);
     transition: all 0.3s ease;
 
     &:hover {
         background-color: var(--secondary-color);
-        color: var(--primary-color);
+        color: var(--text-color-primary);
     }
 
     &:last-child {
