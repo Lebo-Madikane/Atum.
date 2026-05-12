@@ -4,24 +4,28 @@
 @use "sass:math";
 @use "sass:meta";
 
+// Import fonts from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 // Colors
 :root {
     /* Brand Colours */
-    --color-primary: #C06C84;
-    --color-secondary: #2A1A22;
-    --color-tertiary: #CFAFB6;
+    --color-primary: #2563EB;
+    --color-secondary: #581C87;
+    --color-tertiary: #D1D5DB;
 
     /* Backgrounds */
-    --color-background: #FFF7F4;
-    --color-surface: #FFFFFF;
+    --color-background: #0f172a;
+    --color-surface: #D1D5DB;
 
     /* Text */
-    --color-text-primary: #F5EDEE;
-    --color-text-secondary: #6B6B6B;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #2563EB;
 
     /* UI */
     --color-border: #E6D8D3;
-    --color-accent: #E8B4BC;
+    --color-accent: #60A5FA;
 
     /* Spacing scale */
     --space-xs: 0.5rem;
@@ -32,9 +36,9 @@
 }
 
 // Typography
-$font-primary: 'rasa', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-$font-secondary: 'viga', 'Playfair Display', serif;
-$font-tertiary: 'kanit';
+$font-primary: 'Space Grotesk', sans-serif; // headings
+$font-secondary: 'Inter', sans-serif;   // body
+$font-tertiary: sans-serif;  // labels
 
 // Breakpoints
 $mobile: 768px !default;

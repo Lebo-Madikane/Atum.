@@ -11,7 +11,7 @@
 body {
     font-family: $font-primary;
     line-height: 1.6;
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     background-color: var(--color-background);
     overflow-x: hidden;
 }
@@ -42,7 +42,8 @@ h3 {
 }
 
 p {
-    margin-bottom: 1rem;
+    padding: 0.6rem;
+    //margin-bottom: 1rem;
     font-size: 1.1rem;
 }
 
