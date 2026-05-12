@@ -1,0 +1,70 @@
+@use '../../../styles/variables' as *;
+
+.button {
+    font-family: $font-secondary;
+    border-radius: 8px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+    }
+}
+
+/* Variants */
+
+.primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+
+    &:hover {
+        color: var(--color-tertiary);
+        background: var(--color-background);
+        border: none;
+    }
+}
+
+.secondary {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover {
+        background: var(--color-background);
+        color: var(--color-tertiary);
+        border: none;
+    }
+}
+
+/* Sizes */
+
+.sm {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+}
+
+.md {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+}
+
+.lg {
+    padding: 10px 20px;
+    font-size: 1rem;
+}
