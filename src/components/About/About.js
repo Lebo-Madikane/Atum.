@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import styles from './About.module.scss'
+import Image from 'next/image'
 
 export default function About() {
 
     return (
         <header className={styles.aboutSection}>
+            <Image className={styles.bgImage} src='/about-images/about-bg-image.svg' alt="About Image" width={150} height={100} priority={true} />
             <div className={styles.aboutSection__container}>
                 <div className={styles.aboutSection__container__line}></div>
                 <div className={styles.aboutSection__container__paragraph}>

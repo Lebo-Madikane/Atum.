@@ -8,7 +8,15 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    box-shadow: inset 0 60px 80px -60px rgba(0, 0, 0, 0.318), 0 -30px 60px rgba(0, 0, 0, 0.332);
+    box-shadow: inset 0 60px 80px -60px rgba(0, 0, 0, 0.318), 0 -40px 50px -20px rgba(0, 0, 0, 0.332); 
+    
+    .bgImage {
+        @include absolute-fill;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.06;
+    }
 
     &__container {
         z-index: 10;
