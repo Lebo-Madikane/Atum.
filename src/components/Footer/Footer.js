@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './Footer.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 
@@ -9,6 +9,7 @@ export default function Footer() {
 
     return (
         <header className={styles.footer}>
+            <Image className={styles.footerbgImage} src='/footer-images/footer-bg-img.svg' alt="Footer Image" width={150} height={100} priority={true} />
             <div className={styles.container}>
                 <div className={styles.footerLinks}>
                     <div className={styles.footerLinksOne}>

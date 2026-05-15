@@ -28,15 +28,16 @@ export default function Services() {
         {
             icon: faArrowTrendUp,
             subHeading: "GROWTH",
-            description: "Data-driven strategies designed to launch your brand into new markets.",
+            description: "SEO and Data-driven strategies designed to launch your brand into new markets.",
             id: 3,
             style: "Digital Marketing",
-            image: '/services-images/digitalMImage.webp',
+            image: '/services-images/digitalMarketImg.webp',
         }
     ]
 
     return (
         <section id="services" className={styles.services}>
+            <Image className={styles.ServicebgImage} src='/services-images/services-bg-image.svg' alt="Services Image" width={150} height={100} priority={true} />
             <div className={styles.container}>
                 <div className={styles.content}>
                     {services.map((service, index) => (
