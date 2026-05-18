@@ -8,7 +8,7 @@ import { faEnvelope, faPlaneDeparture } from "@fortawesome/free-solid-svg-icons"
 export default function CtaForm() {
 
     return (
-        <header className={styles.ctaForm}>
+        <section className={styles.ctaForm}>
             <div className={styles.container}>
                 <Card className={styles.ctaCard}>
                     <FontAwesomeIcon icon={faPlaneDeparture} className={styles.icon}></FontAwesomeIcon>
@@ -17,6 +17,6 @@ export default function CtaForm() {
                     <Link href={''}><Button><FontAwesomeIcon icon={faEnvelope} className={styles.iconEnvelope}></FontAwesomeIcon>Get in Touch</Button></Link>
                 </Card>
             </div>
-        </header>
+        </section>
     )
 }
