@@ -39,7 +39,7 @@ export default function LearnMore() {
         <section className={styles.learnMore}>
             <div className={styles.container}>
                 <Card className={styles.learnMoreCard}>
-                    <div className={styles.header}><Image className={styles.image} src='/learnMore-images/designHeaderImg.webp' alt="Audience Image" width={150} height={100} priority={true} /></div>
+                    <div className={styles.header}><Image className={styles.image} src='/learnMore-images/designHeaderImage.webp' alt="Audience Image" width={150} height={100} priority={true} /></div>
                     <div className={styles.body}>
                         <div className={styles.text}>
                             <h7>Web Design</h7>
