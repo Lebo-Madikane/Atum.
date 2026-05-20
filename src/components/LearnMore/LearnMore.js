@@ -11,27 +11,27 @@ export default function LearnMore() {
     const images = [
         {
             id: 1,
-            image: '/learnMore-images/carousel/audienceImgOne.webp',
+            image: '/learnMore-images/carousel/web-design/designImageOne.webp',
         },
         {
             id: 2,
-            image: '/learnMore-images/carousel/audienceImg.webp',
+            image: '/learnMore-images/carousel/web-design/designImgTwo.webp',
         },
         {
             id: 3,
-            image: '/learnMore-images/carousel/audienceImgTwo.webp',
+            image: '/learnMore-images/carousel/web-design/designImgThreee.webp',
         },
         {
             id: 4,
-            image: '/learnMore-images/carousel/audienceImgFour.webp',
+            image: '/learnMore-images/carousel/web-design/designImgFour.webp',
         },
         {
             id: 5,
-            image: '/learnMore-images/carousel/audienceImgFive.webp',
+            image: '/learnMore-images/carousel/web-design/designImgFive.webp',
         },
         {
             id: 6,
-            image: '/learnMore-images/carousel/audienceImgSeven.webp',
+            image: '/learnMore-images/carousel/web-design/designImgSix.webp',
         },
     ]
 
@@ -39,10 +39,10 @@ export default function LearnMore() {
         <section className={styles.learnMore}>
             <div className={styles.container}>
                 <Card className={styles.learnMoreCard}>
-                    <div className={styles.header}><Image className={styles.image} src='/learnMore-images/carousel/audienceImgThree.webp' alt="Audience Image" width={150} height={100} priority={true} /></div>
+                    <div className={styles.header}><Image className={styles.image} src='/learnMore-images/designHeaderImg.webp' alt="Audience Image" width={150} height={100} priority={true} /></div>
                     <div className={styles.body}>
                         <div className={styles.text}>
-                            <h7>Digital Marketing</h7>
+                            <h7>Web Design</h7>
                             <p>Your website is often the first impression potential clients have of your brand. In seconds, visitors decide whether to stay or leave.</p>
                             <p>We create visually striking and user-focused digital experiences that build trust, improve engagement, and increase conversions.</p>
                             <p>● Responsive ● UI/UX Strategy ● Brand Integration</p>
