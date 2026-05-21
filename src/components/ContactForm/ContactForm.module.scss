@@ -1,7 +1,7 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
-.contactForm {
+.contactFormSection {
     width: 35%;
     //height: 500px;
     margin: 0 auto;
@@ -27,6 +27,28 @@
             align-content: center;
             border: 2px solid red;
 
+            .contactForm {
+                border: 2px solid yellow;
+
+                .formGroup {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 15;
+                    border: 2px solid orange;
+
+                    .formfullName, .formEmail, .formService, .formBudget {
+                        display: flex;
+                        flex-direction: column;
+                        border: 2px solid yellow;
+                    }
+                }
+
+                .formDescription {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
         }
 
         @include mobile {
