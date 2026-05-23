@@ -63,6 +63,7 @@ export default function ContactForm() {
             <div className={styles.container}>
                 <Card className={styles.contactFormCard}>
                     <div className={styles.contactFormHeader}>
+                        <h9>CONTACT US</h9>
                         <h2>Let's Build Your Brand</h2>
                         <p>Tell us about your vision, and we'll show you how to make it reality.</p>
                     </div>
