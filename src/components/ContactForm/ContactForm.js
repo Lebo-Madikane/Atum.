@@ -64,14 +64,14 @@ export default function ContactForm() {
                 <Card className={styles.contactFormCard}>
                     <div className={styles.contactFormHeader}>
                         <h9>CONTACT US</h9>
-                        <h2>Let's Build Your Brand</h2>
+                        <h2>Let's Build Your <span className={styles.brand}>Brand</span></h2>
                         <p>Tell us about your vision, and we'll show you how to make it reality.</p>
                     </div>
                     <form className={styles.contactForm} onSubmit={handleSubmit}>
                         <div className={styles.formGroup}>
                             <div className={styles.formfullName}>
-                                <label htmlFor="fullName" className="formLabel">
-                                    Full Name <span className="formRequired">*</span>
+                                <label htmlFor="fullName" className={styles.formLabel}>
+                                    Full Name <span className={styles.formRequired}>*</span>
                                 </label>
                                 <input
                                     type="text"
@@ -79,14 +79,14 @@ export default function ContactForm() {
                                     name="fullName"
                                     value={formData.fullName}
                                     onChange={handleChange}
-                                    className="formInput"
+                                    className={styles.formInput}
                                     placeholder="Jane Smith"
                                     required
                                 />
                             </div>
                             <div className={styles.formEmail}>
-                                <label htmlFor="email" className="formLabel">
-                                    Email Address <span className="formRequired">*</span>
+                                <label htmlFor="email" className={styles.formLabel}>
+                                    Email Address <span className={styles.formRequired}>*</span>
                                 </label>
                                 <input
                                     type="email"
@@ -94,7 +94,7 @@ export default function ContactForm() {
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
-                                    className="formInput"
+                                    className={styles.formInput}
                                     placeholder="jane@company.com"
                                     required
                                 />
@@ -102,15 +102,15 @@ export default function ContactForm() {
                         </div>
                         <div className={styles.formGroup}>
                             <div className={styles.formService}>
-                                <label htmlFor="service" className="formLabel">
-                                    Service Interest <span className="formRequired">*</span>
+                                <label htmlFor="service" className={styles.formLabel}>
+                                    Service Interest <span className={styles.formRequired}>*</span>
                                 </label>
                                 <select
                                     id="service"
                                     name="service"
                                     value={formData.service}
                                     onChange={handleChange}
-                                    className="formSelect"
+                                    className={styles.formSelect}
                                     required
                                 >
                                     <option value="">Select a service</option>
@@ -123,15 +123,15 @@ export default function ContactForm() {
                                 </select>
                             </div>
                             <div className={styles.formBudget}>
-                                <label htmlFor="budget" className="formLabel">
-                                    Project Budget <span className="formRequired">*</span>
+                                <label htmlFor="budget" className={styles.formLabel}>
+                                    Project Budget <span className={styles.formRequired}>*</span>
                                 </label>
                                 <select
                                     id="budget"
                                     name="budget"
                                     value={formData.budget}
                                     onChange={handleChange}
-                                    className="formSelect"
+                                    className={styles.formSelect}
                                     required
                                 >
                                     <option value="">Select a budget range</option>
@@ -145,15 +145,15 @@ export default function ContactForm() {
                             </div>
                         </div>
                         <div className={styles.formDescription}>
-                            <label htmlFor="projectDescription" className="formLabel">
-                                Tell Us About Your Project <span className="formRequired">*</span>
+                            <label htmlFor="projectDescription" className={styles.formLabel}>
+                                Tell Us About Your Project <span className={styles.formRequired}>*</span>
                             </label>
                             <textarea
                                 id="projectDescription"
                                 name="projectDescription"
                                 value={formData.projectDescription}
                                 onChange={handleChange}
-                                className="formTextarea"
+                                className={styles.formTextarea}
                                 placeholder="What challenge are you trying to solve? What's your vision for this project?"
                                 rows="6"
                                 required
