@@ -135,11 +135,11 @@ export default function ContactForm() {
                                     required
                                 >
                                     <option value="">Select a budget range</option>
-                                    <option value="under-5k">Under R50,000</option>
-                                    <option value="5k-15k">R50,000 - R150,000</option>
-                                    <option value="15k-30k">R150,000 - R300,000</option>
-                                    <option value="30k-50k">R300,000 - R500,000</option>
-                                    <option value="50k-plus">R500,000+</option>
+                                    <option value="under-1k">Under $1,000</option>
+                                    <option value="1k-3k">$1,000 - $3,000</option>
+                                    <option value="3k-6k">$3,000 - $6,000</option>
+                                    <option value="6k-10k">$6,000 - $10,000</option>
+                                    <option value="10k-plus">$10,000+</option>
                                     <option value="help-determining">I need help determining this</option>
                                 </select>
                             </div>
