@@ -14,14 +14,14 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 {/* Logo */}
-                <Link href="/" className={styles.logo}>
+                <Link href="/#home" className={styles.logo}>
                     <h2>Atum.</h2>
                 </Link>
 
                 {/* Desktop Navigation */}
                 <nav className={styles.nav}>
                     <Link href="/#about" className={styles.navLink}>About</Link>
-                    <Link href="/services" className={styles.navLink}>Services</Link>
+                    <Link href="/#services" className={styles.navLink}>Services</Link>
                     <Link href="/#contact" className={styles.navLink}>Contact</Link>
                 </nav>
 

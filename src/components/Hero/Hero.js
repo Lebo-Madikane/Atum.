@@ -6,7 +6,7 @@ import Button from '@/components/UI/Button/Button'
 export default function Hero() {
 
     return (
-        <section className={styles.heroSection}>
+        <section id='home' className={styles.heroSection}>
             {/* Background Layers */}
             <div className={styles.heroSection__bgBase}></div>
 
@@ -28,8 +28,8 @@ export default function Hero() {
                 <h1>We Build <span className={styles.universes}>Universes</span></h1>
                 <p>Crafting high-quality digital experiences<br /> that launch ambitious brands.</p>
                 <div className={styles.heroSection__content__btnContainer}>
-                    <Link href={''}><Button>Start Project 🚀</Button></Link>
-                    <Link href={''}><Button variant='secondary'>View Services</Button></Link>
+                    <Link href={'/#contact'}><Button>Start Project 🚀</Button></Link>
+                    <Link href={'/#services'}><Button variant='secondary'>View Services</Button></Link>
                 </div>
             </div>
         </section>

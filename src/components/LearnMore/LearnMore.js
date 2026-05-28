@@ -1,64 +1,113 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import styles from './LearnMore.module.scss'
-import Card from '@/components/UI/Card/Card'
-import Button from '@/components/UI/Button/Button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket } from "@fortawesome/free-solid-svg-icons";
+'use client';
 
-export default function LearnMore() {
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from './LearnMore.module.scss';
+import Card from '@/components/UI/Card/Card';
+import Button from '@/components/UI/Button/Button';
+import { servicesData } from '@/data/servicesData';
 
-    const images = [
-        {
-            id: 1,
-            image: '/learnMore-images/carousel/web-design/designImageOne.webp',
-        },
-        {
-            id: 2,
-            image: '/learnMore-images/carousel/web-design/designImgTwo.webp',
-        },
-        {
-            id: 3,
-            image: '/learnMore-images/carousel/web-design/designImgThreee.webp',
-        },
-        {
-            id: 4,
-            image: '/learnMore-images/carousel/web-design/designImgFour.webp',
-        },
-        {
-            id: 5,
-            image: '/learnMore-images/carousel/web-design/designImgFive.webp',
-        },
-        {
-            id: 6,
-            image: '/learnMore-images/carousel/web-design/designImgSix.webp',
-        },
-    ]
+// Receive the service type as a prop
+export default function LearnMore({ serviceType = 'webDesign' }) {
+    const [serviceInfo, setServiceInfo] = useState(null);
+
+    useEffect(() => {
+        // Map the serviceType to the correct data
+        const mappedService = servicesData[serviceType];
+        if (mappedService) {
+            setServiceInfo(mappedService);
+        } else {
+            // Fallback to webDesign if invalid service type
+            setServiceInfo(servicesData.webDesign);
+        }
+    }, [serviceType]);
+
+    if (!serviceInfo) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <section className={styles.learnMore}>
             <div className={styles.container}>
                 <Card className={styles.learnMoreCard}>
-                    <div className={styles.header}><Image className={styles.image} src='/learnMore-images/designHeaderImage.webp' alt="Audience Image" width={150} height={100} priority={true} /></div>
+                    {/* Header Image */}
+                    <div className={styles.header}>
+                        <Image
+                            className={styles.image}
+                            src={serviceInfo.headerImage}
+                            alt={`${serviceInfo.title} Header`}
+                            width={150}
+                            height={100}
+                            priority={true}
+                        />
+                    </div>
+
+                    {/* Body Content */}
                     <div className={styles.body}>
                         <div className={styles.text}>
-                            <h7>Web Design</h7>
-                            <p>Your website is often the first impression potential clients have of your brand. In seconds, visitors decide whether to stay or leave.</p>
-                            <p>We create visually striking and user-focused digital experiences that build trust, improve engagement, and increase conversions.</p>
-                            <p>● Responsive ● UI/UX Strategy ● Brand Integration</p>
+                            {/* Title with Badge */}
+                            <div className={styles.titleSection}>
+                                <span className={styles.badge}>{serviceInfo.tagline}</span>
+                                <h2 className={styles.title}>{serviceInfo.title}</h2>
+                            </div>
+
+                            {/* Challenge */}
+                            <p className={styles.paragraph}>
+                                {serviceInfo.challenge}
+                            </p>
+
+                            {/* Solution */}
+                            <p className={styles.paragraph}>
+                                {serviceInfo.solution}
+                            </p>
+
+                            {/* Highlights */}
+                            <div className={styles.highlights}>
+                                {serviceInfo.highlights.map((highlight, index) => (
+                                    <span key={index} className={styles.highlight}>
+                                        ● {highlight}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
-                        <Button className={styles.ctaBtn}>Start Project</Button>
+
+                        {/* CTA Button */}
+                        <Link href={serviceInfo.ctaLink}>
+                            <Button className={styles.ctaBtn}>
+                                {serviceInfo.ctaText}
+                            </Button>
+                        </Link>
                     </div>
+
+                    {/* Footer Carousel */}
                     <div className={styles.footer}>
                         <div className={styles.marqueeTrack}>
-                            {images.map((image, index) => (
-                                <div className={styles.imageContainer} key={image.id}>
-                                    <Image className={styles.image} src={image.image} alt="Marketing Image" width={150} height={100} priority={true} />
+                            {/* First set of images */}
+                            {serviceInfo.carouselImages.map((image) => (
+                                <div className={styles.imageContainer} key={`first-${image.id}`}>
+                                    <Image
+                                        className={styles.image}
+                                        src={image.image}
+                                        alt={`${serviceInfo.title} Portfolio`}
+                                        width={150}
+                                        height={100}
+                                        priority={true}
+                                    />
                                 </div>
                             ))}
-                            {images.map((image, index) => (
-                                <div className={styles.imageContainer} key={image.id}>
-                                    <Image className={styles.image} src={image.image} alt="Marketing Image" width={150} height={100} priority={true} />
+
+                            {/* Duplicate set for seamless loop */}
+                            {serviceInfo.carouselImages.map((image) => (
+                                <div className={styles.imageContainer} key={`second-${image.id}`}>
+                                    <Image
+                                        className={styles.image}
+                                        src={image.image}
+                                        alt={`${serviceInfo.title} Portfolio`}
+                                        width={150}
+                                        height={100}
+                                        priority={true}
+                                    />
                                 </div>
                             ))}
                         </div>
@@ -66,5 +115,5 @@ export default function LearnMore() {
                 </Card>
             </div>
         </section>
-    )
+    );
 }

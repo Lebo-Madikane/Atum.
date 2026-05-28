@@ -2,7 +2,7 @@
 @use '../../styles/mixins' as *;
 
 .contactFormSection {
-    width: 38%;
+    width: 90%;
     //height: 500px;
     margin: 0 auto;
     border-radius: 16px;
@@ -10,7 +10,7 @@
     background: linear-gradient(to bottom, #0f172a, #1a1f35, #0a0f1a);
     //pointer-events: none;
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    //border: 1px solid rgba(255, 255, 255, 0.1);
     @include flex-center;
 
     .container {
@@ -30,7 +30,9 @@
             background: none;
 
             .contactFormHeader {
-                h9 {
+                h6 {
+                    width: fit-content;
+                    margin: 0 auto;
                     color: #60A5FA;
                     background: rgba(37, 99, 235, 0.1);
                     font-size: 0.875rem;

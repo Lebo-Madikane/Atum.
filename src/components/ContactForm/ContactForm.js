@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link'
 import styles from './ContactForm.module.scss'
 import Card from '@/components/UI/Card/Card'
 import Button from '@/components/UI/Button/Button'
@@ -30,7 +29,6 @@ export default function ContactForm() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Your form submission logic here
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST',
@@ -40,7 +38,6 @@ export default function ContactForm() {
 
             if (response.ok) {
                 setSubmitStatus('success');
-                // Reset form
                 setFormData({
                     fullName: '',
                     email: '',
@@ -59,12 +56,12 @@ export default function ContactForm() {
     };
 
     return (
-        <section className={styles.contactFormSection}>
+        <div className={styles.contactFormSection}>
             <div className={styles.container}>
                 <Card className={styles.contactFormCard}>
                     <div className={styles.contactFormHeader}>
-                        <h9>CONTACT US</h9>
-                        <h2>Let's Build Your <span className={styles.brand}>Brand</span></h2>
+                        <h6>CONTACT US</h6>
+                        <h2>Let's Build Your <span className={styles.brand}>Universe</span></h2>
                         <p>Tell us about your vision, and we'll show you how to make it reality.</p>
                     </div>
                     <form className={styles.contactForm} onSubmit={handleSubmit}>
@@ -159,31 +156,28 @@ export default function ContactForm() {
                                 required
                             ></textarea>
                         </div>
-                        {/* Submit Button */}
-                        <div className="form__group form__group--full">
-                            <Button
-                                type="submit"
-                                className="form__submit"
-                                disabled={isSubmitting}
-                            >
-                                {isSubmitting ? 'Sending...' : 'Submit'}
-                            </Button>
-                        </div>
 
-                        {/* Success/Error Messages */}
+                        <Button
+                            type="submit"
+                            className={styles.submitButton}
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting ? 'Sending...' : 'Start Your Journey'}
+                        </Button>
+
                         {submitStatus === 'success' && (
-                            <div className="form__message form__message--success">
+                            <div className={styles.successMessage}>
                                 🚀 Thanks for reaching out! We'll be in touch within 24 hours.
                             </div>
                         )}
                         {submitStatus === 'error' && (
-                            <div className="form__message form__message--error">
-                                Something went wrong. Please try again or email us directly at hello@atum.digital
+                            <div className={styles.errorMessage}>
+                                Something went wrong. Please try again or email us at hello@atum.digital
                             </div>
                         )}
                     </form>
                 </Card>
             </div>
-        </section>
+        </div>
     )
 }

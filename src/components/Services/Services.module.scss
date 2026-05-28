@@ -3,8 +3,9 @@
 
 .services {
     width: 100%;
-    min-height: 550px;
+    min-height: 600px;
     align-content: center;
+    text-align: center;
     margin: 0px auto;
     position: relative;
 
@@ -20,8 +21,8 @@
     .container {
         text-align: center;
         width: 70%;
-        margin: 0 auto;
-        
+        margin: 20 auto;
+
 
         @include mobile {
             padding: 0;
@@ -43,6 +44,7 @@
                 background: rgba(255, 255, 255, 0.03);
                 border: 1px solid rgba(255, 255, 255, 0.08);
                 padding: 5px;
+                cursor: pointer;
 
                 @include mobile {
                     width: 9rem;
@@ -52,6 +54,7 @@
                     transform: translateY(-5px);
                     box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
                     transition: all 0.3s ease;
+                    border-color: rgba(37, 99, 235, 0.3);
                 }
 
                 .serviceCardContent {
@@ -64,26 +67,31 @@
                         height: 7rem;
                         border-radius: 10px 10px 0px 0px;
                         object-fit: cover;
+                        transition: all 0.3s ease;
                     }
 
                     .icon {
                         width: 20px;
                         padding: 2px;
+                        transition: all 0.3s ease;
                     }
 
                     .subHeading {
                         font-size: 0.8rem;
-                    }
-
-                    .icon, .subHeading {
-                        @include flex-center;
+                        display: flex;
+                        align-items: center;
                         justify-content: flex-start;
-                        gap: 5;
+                        gap: 0.5rem;
+                        margin-top: 0.5rem;
+                        color: var(--color-primary);
+                        font-weight: 600;
                     }
 
                     .style {
                         margin-top: 5px;
                         color: var(--color-text-primary);
+                        font-size: 1rem;
+                        font-weight: 600;
                     }
 
                     p {
@@ -91,29 +99,86 @@
                         font-size: 0.89rem;
                         padding: 0px;
                         margin-top: 5px;
+                        line-height: 1.5;
                     }
 
                     .flex {
-                        @include flex-center;
+                        display: flex;
+                        align-items: center;
                         justify-content: space-between;
+                        margin-top: 1rem;
+
+                        Button {
+                            background-color: transparent;
+                        }
                     }
 
+                    // UPDATED: Learn More as button instead of p tag
                     .learnMore {
-
                         font-size: 0.85rem;
                         color: var(--color-text-primary);
-                    }
-
-                    Button {
-                        color: var(--color-tertiary);
-                        background-color: transparent;
+                        background: transparent;
                         border: none;
-                        margin-top: 5px;
+                        padding: 0;
+                        cursor: pointer;
+                        font-weight: 500;
+                        transition: all 0.3s ease;
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
 
                         &:hover {
                             color: var(--color-primary);
+
+                            &::after {
+                                transform: translateX(4px);
+                            }
+                        }
+
+                        // Underline animation on hover
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -4px;
+                            left: 0;
+                            width: 100%;
+                            height: 2px;
+                            background: var(--color-primary);
+                            transform: scaleX(0);
+                            transform-origin: left;
+                            transition: transform 0.3s ease;
                         }
                     }
+
+                    // Arrow button styling
+                    :global(.arrowRight) {
+                        color: var(--color-tertiary);
+                        background-color: transparent;
+                        border: none;
+                        padding: 0.5rem;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease;
+                        border-radius: 50%;
+
+                        &:hover {
+                            color: var(--color-primary);
+                            background-color: rgba(37, 99, 235, 0.1);
+                        }
+                    }
+                }
+            }
+
+            // Hover effect on service card
+            .serviceCard:hover .serviceCardContent {
+                .image {
+                    filter: brightness(1.1);
+                }
+
+                .icon {
+                    color: var(--color-primary);
                 }
             }
         }

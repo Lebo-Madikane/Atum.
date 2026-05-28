@@ -18,7 +18,6 @@ export default function Footer() {
                         <Link href={''}><FontAwesomeIcon icon={faInstagram} className={styles.icons}></FontAwesomeIcon></Link>
                     </div>
                     <div className={styles.footerLinksTwo}>
-                        <Link href="/services" className={styles.footerLink}>Services</Link>
                         <Link href="/#contact" className={styles.footerLink}>Start Project</Link>
                     </div>
                 </div>
