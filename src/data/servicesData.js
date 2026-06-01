@@ -92,7 +92,7 @@ export const servicesData = {
         title: 'Digital Marketing',
         icon: 'growth', // Will use with FontAwesome
         tagline: 'GROWTH',
-        headerImage: '/learnMore-images/marketingHeaderImage.webp',
+        headerImage: '/learnMore-images/marketingHeaderImage.png',
         challenge: 'A stunning website without traffic is like a billboard in the desert. You\'ve invested in your digital presence—now ensure your audience finds you.',
         solution: 'We deploy SEO and data-driven strategies designed to launch your brand into new markets. Through targeted campaigns and continuous optimization, we turn visibility into conversions.',
         highlights: [
