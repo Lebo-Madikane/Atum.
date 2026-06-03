@@ -5,7 +5,7 @@ export const servicesData = {
         id: 'web-design',
         title: 'Web Design',
         icon: 'design', // Will use with FontAwesome
-        tagline: 'DESIGN',
+        //tagline: 'DESIGN',
         headerImage: '/learnMore-images/designHeaderImage.webp',
         challenge: 'Your website is often the first impression potential clients have of your brand. In seconds, visitors decide whether to stay or leave.',
         solution: 'We create visually striking and user-focused digital experiences that build trust, improve engagement, and increase conversions.',
@@ -53,9 +53,9 @@ export const servicesData = {
         challenge: 'A beautiful design means nothing if your website is slow, buggy, or breaks on mobile. Behind every great digital experience is robust, scalable code.',
         solution: 'We build robust, scalable front-end and back-end systems that power your digital infrastructure. Fast, secure, and built to grow with your business.',
         highlights: [
-            'Modern Stack (React/Next.js)',
-            'Scalable Architecture',
-            'SEO Optimized'
+            'Modern Stack',
+            'Responsive',
+            'Scalable'
         ],
         carouselImages: [
             {
@@ -91,39 +91,39 @@ export const servicesData = {
         id: 'digital-marketing',
         title: 'Digital Marketing',
         icon: 'growth', // Will use with FontAwesome
-        tagline: 'GROWTH',
-        headerImage: '/learnMore-images/marketingHeaderImage.png',
+        //tagline: 'GROWTH',
+        headerImage: '/learnMore-images/marketingHeaderImage.svg',
         challenge: 'A stunning website without traffic is like a billboard in the desert. You\'ve invested in your digital presence—now ensure your audience finds you.',
         solution: 'We deploy SEO and data-driven strategies designed to launch your brand into new markets. Through targeted campaigns and continuous optimization, we turn visibility into conversions.',
         highlights: [
             'SEO Strategy',
-            'Data-Driven Campaigns',
+            'Data-Driven',
             'Performance Analytics'
         ],
         carouselImages: [
             {
                 id: 1,
-                image: '/learnMore-images/carousel/digital-marketing/marketingImageOne.webp',
+                image: '/learnMore-images/carousel/digital-marketing/digitalMImage.webp',
             },
             {
                 id: 2,
-                image: '/learnMore-images/carousel/digital-marketing/marketingImgTwo.webp',
+                image: '/learnMore-images/carousel/digital-marketing/digitalMImgOne.svg',
             },
             {
                 id: 3,
-                image: '/learnMore-images/carousel/digital-marketing/marketingImgThree.webp',
+                image: '/learnMore-images/carousel/digital-marketing/digitalMImgTwo.svg',
             },
             {
                 id: 4,
-                image: '/learnMore-images/carousel/digital-marketing/marketingImgFour.webp',
+                image: '/learnMore-images/carousel/digital-marketing/digitalMImgThree.svg',
             },
             {
                 id: 5,
-                image: '/learnMore-images/carousel/digital-marketing/marketingImgFive.webp',
+                image: '/learnMore-images/carousel/digital-marketing/digitalMImgFour.svg',
             },
             {
                 id: 6,
-                image: '/learnMore-images/carousel/digital-marketing/marketingImgSix.webp',
+                image: '/learnMore-images/carousel/digital-marketing/digitalMImgFive.svg',
             },
         ],
         ctaText: 'Start Project',
