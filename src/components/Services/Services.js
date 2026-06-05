@@ -23,7 +23,7 @@ export default function Services() {
             id: 1,
             style: "Web Design",
             description: "Immersive UI/UX interfaces that captivate users and converts visitors into loyal customers",
-            image: '/services-images/webDesignImg.webp',
+            image: '/services-images/webDesignImg.svg',
             serviceType: 'webDesign', // Maps to servicesData key
         },
         {
@@ -32,7 +32,7 @@ export default function Services() {
             description: "Robust, scalable front-end and back-end code that powers your digital infrastructure.",
             id: 2,
             style: "Web Development",
-            image: '/services-images/webDevImg.webp',
+            image: '/services-images/webDevImg.svg',
             serviceType: 'webDevelopment', // Maps to servicesData key
         },
         {
@@ -41,7 +41,7 @@ export default function Services() {
             description: "SEO and Data-driven strategies designed to launch your brand into new markets.",
             id: 3,
             style: "Digital Marketing",
-            image: '/services-images/digitalMarketImg.webp',
+            image: '/services-images/digitalMarketImg.svg',
             serviceType: 'digitalMarketing', // Maps to servicesData key
         }
     ]
