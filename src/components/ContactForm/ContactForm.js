@@ -61,8 +61,8 @@ export default function ContactForm() {
                 <Card className={styles.contactFormCard}>
                     <div className={styles.contactFormHeader}>
                         <h6>CONTACT US</h6>
-                        <h2>Let's Build Your <span className={styles.brand}>Universe</span></h2>
-                        <p>Tell us about your vision, and we'll show you how to make it reality.</p>
+                        <h2>Let's Help You <span className={styles.brand}>Build</span></h2>
+                        <p>Tell us about your vision.</p>
                     </div>
                     <form className={styles.contactForm} onSubmit={handleSubmit}>
                         <div className={styles.formGroup}>
