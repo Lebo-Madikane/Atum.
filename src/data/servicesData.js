@@ -6,13 +6,13 @@ export const servicesData = {
         title: 'Web Design',
         icon: 'design', // Will use with FontAwesome
         //tagline: 'DESIGN',
-        headerImage: '/learnMore-images/designHeaderImage.webp',
+        headerImage: '/learnMore-images/designHeaderImage.svg',
         challenge: 'Your website is often the first impression potential clients have of your brand. In seconds, visitors decide whether to stay or leave.',
         solution: 'We create visually striking and user-focused digital experiences that build trust, improve engagement, and increase conversions.',
         highlights: [
-            'Responsive',
-            'UI/UX Strategy',
-            'Brand Integration'
+             'Responsive' ,
+             'UI/UX' ,
+             'Brand Integration' 
         ],
         carouselImages: [
             {
@@ -25,7 +25,7 @@ export const servicesData = {
             },
             {
                 id: 3,
-                image: '/learnMore-images/carousel/web-design/designImgThreee.webp',
+                image: '/learnMore-images/carousel/web-design/designImgThree.svg',
             },
             {
                 id: 4,
@@ -48,39 +48,39 @@ export const servicesData = {
         id: 'web-development',
         title: 'Web Development',
         icon: 'development', // Will use with FontAwesome
-        tagline: 'DEVELOPMENT',
-        headerImage: '/learnMore-images/developmentHeaderImage.webp',
-        challenge: 'A beautiful design means nothing if your website is slow, buggy, or breaks on mobile. Behind every great digital experience is robust, scalable code.',
-        solution: 'We build robust, scalable front-end and back-end systems that power your digital infrastructure. Fast, secure, and built to grow with your business.',
+        //tagline: 'DEVELOPMENT',
+        headerImage: '/learnMore-images/devHeaderImage.svg',
+        challenge: 'A beautiful design means nothing if your website is slow, buggy, or breaks on mobile.',
+        solution: 'We build scalable front-end and back-end systems that power your digital infrastructure. Fast, secure, and built to grow with your business.',
         highlights: [
             'Modern Stack',
-            'Responsive',
+            'Clean',
             'Scalable'
         ],
         carouselImages: [
             {
                 id: 1,
-                image: '/learnMore-images/carousel/web-development/devImageOne.webp',
+                image: '/learnMore-images/carousel/web-development/devImgOne.svg',
             },
             {
                 id: 2,
-                image: '/learnMore-images/carousel/web-development/devImgTwo.webp',
+                image: '/learnMore-images/carousel/web-development/devImgTwo.svg',
             },
             {
                 id: 3,
-                image: '/learnMore-images/carousel/web-development/devImgThree.webp',
+                image: '/learnMore-images/carousel/web-development/devImgThree.svg',
             },
             {
                 id: 4,
-                image: '/learnMore-images/carousel/web-development/devImgFour.webp',
+                image: '/learnMore-images/carousel/web-development/devImgFour.svg',
             },
             {
                 id: 5,
-                image: '/learnMore-images/carousel/web-development/devImgFive.webp',
+                image: '/learnMore-images/carousel/web-development/devImgFive.svg',
             },
             {
                 id: 6,
-                image: '/learnMore-images/carousel/web-development/devImgSix.webp',
+                image: '/learnMore-images/carousel/web-development/devImgSix.svg',
             },
         ],
         ctaText: 'Start Project',
@@ -93,12 +93,12 @@ export const servicesData = {
         icon: 'growth', // Will use with FontAwesome
         //tagline: 'GROWTH',
         headerImage: '/learnMore-images/marketingHeaderImage.svg',
-        challenge: 'A stunning website without traffic is like a billboard in the desert. You\'ve invested in your digital presence—now ensure your audience finds you.',
+        challenge: 'A stunning website without traffic is like a billboard in the desert.',
         solution: 'We deploy SEO and data-driven strategies designed to launch your brand into new markets. Through targeted campaigns and continuous optimization, we turn visibility into conversions.',
         highlights: [
-            'SEO Strategy',
+            'SEO',
             'Data-Driven',
-            'Performance Analytics'
+            'Analytics'
         ],
         carouselImages: [
             {
