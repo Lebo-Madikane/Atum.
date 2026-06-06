@@ -25,7 +25,7 @@ export default function Hero() {
             {/* Content */}
             <div className={styles.heroSection__content}>
                 <span className={styles.heroSection__content__availableContainer}><div className={styles.heroSection__content__availableContainer__onlineIcon}></div>AVAILABLE FOR NEW PROJECTS</span>
-                <h1>We Build <span className={styles.universes}>Universes</span></h1>
+                <h1>We Build Web <span className={styles.universes}>Assets</span></h1>
                 <p>Crafting high-quality digital experiences<br /> that launch ambitious brands.</p>
                 <div className={styles.heroSection__content__btnContainer}>
                     <Link href={'/#contact'}><Button>Start Project 🚀</Button></Link>
