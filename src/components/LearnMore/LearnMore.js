@@ -9,7 +9,7 @@ import Button from '@/components/UI/Button/Button';
 import { servicesData } from '@/data/servicesData';
 
 // Receive the service type as a prop
-export default function LearnMore({ serviceType = 'webDesign' }) {
+export default function LearnMore({ serviceType = 'webDesign', onContactClick }) {
     const [serviceInfo, setServiceInfo] = useState(null);
 
     useEffect(() => {
@@ -26,6 +26,14 @@ export default function LearnMore({ serviceType = 'webDesign' }) {
     if (!serviceInfo) {
         return <div>Loading...</div>;
     }
+
+    // Handle Start Project button click
+    const handleStartProjectClick = () => {
+        // Call the onContactClick function passed from parent
+        if (onContactClick) {
+            onContactClick();
+        }
+    };
 
     return (
         <section className={styles.learnMore}>
@@ -72,12 +80,14 @@ export default function LearnMore({ serviceType = 'webDesign' }) {
                             </div>
                         </div>
 
-                        {/* CTA Button */}
-                        <Link href={serviceInfo.ctaLink}>
-                            <Button className={styles.ctaBtn}>
-                                {serviceInfo.ctaText}
-                            </Button>
-                        </Link>
+                        {/* CTA Button - Opens Contact Modal */}
+                        <Button
+                            className={styles.ctaBtn}
+                            onClick={handleStartProjectClick}
+                            aria-label={`Start a project for ${serviceInfo.title}`}
+                        >
+                            {serviceInfo.ctaText}
+                        </Button>
                     </div>
 
                     {/* Footer Carousel */}

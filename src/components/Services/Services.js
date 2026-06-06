@@ -8,6 +8,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Modal from '@/components/Modal/Modal';
 import LearnMore from '@/components/LearnMore/LearnMore';
+import ContactForm from '@/components/ContactForm/ContactForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPalette, faArrowTrendUp, faCode, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,6 +16,9 @@ export default function Services() {
     // State for modal
     const [selectedService, setSelectedService] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // State for Contact Form modal
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     const services = [
         {
@@ -57,6 +61,17 @@ export default function Services() {
         setIsModalOpen(false);
         // Optional: Reset service after modal closes
         setTimeout(() => setSelectedService(null), 300);
+    };
+
+    // Handle "Start Project" button in LearnMore (opens Contact modal and closes LearnMore)
+    const handleContactClick = () => {
+        setIsModalOpen(false);
+        setIsContactModalOpen(true);
+    };
+
+    // Close Contact modal
+    const handleCloseContactModal = () => {
+        setIsContactModalOpen(false);
     };
 
     return (
@@ -104,16 +119,14 @@ export default function Services() {
                                             >
                                                 Learn More
                                             </button>
-                                            <Link href={'/#form'}>
-                                                <Button className={styles.arrowRight}
-                                                    onClick={() => handleLearnMore(service.serviceType)}
-                                                    aria-label={`Learn more about ${service.style}`}>
-                                                    <FontAwesomeIcon
-                                                        className={styles.icon}
-                                                        icon={faArrowRight}
-                                                    />
-                                                </Button>
-                                            </Link>
+                                            <Button className={styles.arrowRight}
+                                                onClick={() => handleLearnMore(service.serviceType)}
+                                                aria-label={`Learn more about ${service.style}`}>
+                                                <FontAwesomeIcon
+                                                    className={styles.icon}
+                                                    icon={faArrowRight}
+                                                />
+                                            </Button>
                                         </div>
                                     </div>
                                 </Card>
@@ -126,8 +139,16 @@ export default function Services() {
             {/* Modal with LearnMore Component */}
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
                 {selectedService && (
-                    <LearnMore serviceType={selectedService} />
+                    <LearnMore
+                        serviceType={selectedService}
+                        onContactClick={handleContactClick}
+                    />
                 )}
+            </Modal>
+
+            {/* Contact Form Modal */}
+            <Modal isOpen={isContactModalOpen} onClose={handleCloseContactModal}>
+                <ContactForm />
             </Modal>
         </>
     )

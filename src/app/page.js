@@ -27,7 +27,7 @@ export default function HomePage() {
         <div>
             <main>
                 <Header />
-                <Hero />
+                <Hero onContactClick={handleContactClick} />
                 <About />
                 <Services />
                 {/* CtaForm with modal trigger */}

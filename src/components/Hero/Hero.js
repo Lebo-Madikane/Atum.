@@ -1,9 +1,16 @@
+'use client';
+
 import Link from 'next/link'
 import styles from './Hero.module.scss'
 import Image from 'next/image'
 import Button from '@/components/UI/Button/Button'
 
-export default function Hero() {
+export default function Hero({ onContactClick }) {
+
+    const handleGetInTouchClick = () => {
+        // Call the function passed from parent component
+        onContactClick();
+    };
 
     return (
         <section id='home' className={styles.heroSection}>
@@ -28,7 +35,7 @@ export default function Hero() {
                 <h1>We Build Web <span className={styles.universes}>Assets</span></h1>
                 <p>Crafting high-quality digital experiences<br /> that launch ambitious brands.</p>
                 <div className={styles.heroSection__content__btnContainer}>
-                    <Link href={'/#contact'}><Button>Start Project 🚀</Button></Link>
+                    <Button onClick={handleGetInTouchClick} aria-label="Open contact form">Start Project 🚀</Button>
                     <Link href={'/#services'}><Button variant='secondary'>View Services</Button></Link>
                 </div>
             </div>
