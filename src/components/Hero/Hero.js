@@ -32,8 +32,8 @@ export default function Hero({ onContactClick }) {
             {/* Content */}
             <div className={styles.heroSection__content}>
                 <span className={styles.heroSection__content__availableContainer}><div className={styles.heroSection__content__availableContainer__onlineIcon}></div>AVAILABLE FOR NEW PROJECTS</span>
-                <h1>We Build Web <span className={styles.universes}>Assets</span></h1>
-                <p>Crafting high-quality digital experiences<br /> that launch ambitious brands.</p>
+                <h1>Building Digital <span className={styles.universes}>Assets</span></h1>
+                <p>We craft high-quality digital experiences<br /> that represent ambitious brands.</p>
                 <div className={styles.heroSection__content__btnContainer}>
                     <Button onClick={handleGetInTouchClick} aria-label="Open contact form">Start Project 🚀</Button>
                     <Link href={'/#services'}><Button variant='secondary'>View Services</Button></Link>
