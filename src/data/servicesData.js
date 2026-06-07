@@ -94,7 +94,7 @@ export const servicesData = {
         //tagline: 'GROWTH',
         headerImage: '/learnMore-images/marketingHeaderImage.svg',
         challenge: 'A stunning website without traffic is like a billboard in the desert.',
-        solution: 'We deploy SEO and data-driven strategies designed to launch your brand into new markets. Through targeted campaigns and continuous optimization, we turn visibility into conversions.',
+        solution: 'We deploy SEO and data-driven strategies designed to present your brand into markets. Through targeted campaigns and continuous optimization, turning visibility into conversions.',
         highlights: [
             'SEO',
             'Data-Driven',
