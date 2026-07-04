@@ -21,14 +21,14 @@ export default function CtaForm({ onContactClick }) {
                     <p>Let's discuss how we can elevate your brand to the next dimension.</p>
 
                     {/* Changed from Link to button */}
-                    <button
+                    <Button
                         className={styles.ctaButton}
                         onClick={handleGetInTouchClick}
                         aria-label="Open contact form"
                     >
                         <FontAwesomeIcon icon={faEnvelope} className={styles.iconEnvelope}></FontAwesomeIcon>
                         Get in Touch
-                    </button>
+                    </Button>
                 </Card>
             </div>
         </section>
