@@ -98,6 +98,10 @@
                                 color: #60A5FA;
                             }
                         }
+
+                        @include mobile {
+                            width:100%;
+                        }
                     }
 
                     .formInput, .formSelect {
@@ -164,8 +168,16 @@
         }
 
         @include mobile {
-            width: 90%;
-            height: 65%;
+            width: 100%;
+
+            .contactFormHeader {
+                p {
+                    width: 100%;
+                    padding: 0px 0px 20px 0px;
+                }
+            }
+
+
         }
     }
 }

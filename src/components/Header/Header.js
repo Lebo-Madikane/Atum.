@@ -44,7 +44,7 @@ export default function Header() {
                     <Link href="/#about" className={styles.mobileNavLink} onClick={toggleMenu}>
                         About
                     </Link>
-                    <Link href="/services" className={styles.mobileNavLink} onClick={toggleMenu}>
+                    <Link href="/#services" className={styles.mobileNavLink} onClick={toggleMenu}>
                         Services
                     </Link>
                     <Link href="/#contact" className={styles.mobileNavLink} onClick={toggleMenu}>

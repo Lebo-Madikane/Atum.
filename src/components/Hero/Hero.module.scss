@@ -148,3 +148,32 @@
         }
     }
 }
+
+
+@include mobile {
+
+    .heroSection{
+        &__bgImage {
+            height: 100%;
+        }
+
+        &__content {
+            height: fit-content;
+
+            h1 {
+                width: 100%;
+                font-size: 3rem;
+                line-height: 1.1;
+                margin: 10 auto;
+            }
+
+            p {
+                width: 100%;
+                font-size: 1rem;
+                padding: 0;
+                display: inline-block;
+                margin: 10px auto;
+            }
+        }
+    }
+}

@@ -63,7 +63,7 @@
 
                 Button {
                     margin: 0 auto 15px auto;
-                    width: 30%;
+                    //width: 30%;
                     //height: 11%;
                     font-size: 0.9rem;
                     //font-weight: bold;
@@ -115,8 +115,7 @@
         }
 
         @include mobile {
-            width: 90%;
-            height: 65%;
+            width: 22rem;
         }
     }
 }

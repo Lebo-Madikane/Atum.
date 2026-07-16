@@ -4,11 +4,17 @@
 .aboutSection {
     width: 100%;
     height: 400px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    box-shadow: inset 0 60px 80px -60px rgba(0, 0, 0, 0.318), 0 -40px 50px -20px rgba(0, 0, 0, 0.332); 
+    box-shadow: inset 0 60px 80px -60px rgba(0, 0, 0, 0.318), 0 -40px 50px -20px rgba(0, 0, 0, 0.332);
+    
+    @include mobile {
+        height: 300px;
+        margin: 4rem auto;
+    }
     
     .bgImage {
         @include absolute-fill;
@@ -26,7 +32,8 @@
         gap: 15;
 
         @include mobile {
-            width: 90%;
+            width: 96%;
+            margin-right: 6px;
         }
 
         &__line {
@@ -34,11 +41,22 @@
             width: 7px;
             height: 90%;
             align-self: center;
+
+            @include mobile {
+                //display: none;
+                width: 10px;
+            }
         }
 
         &__paragraph {
             color: var(--color-text-primary);
             align-content: center;
         }
+    }
+}
+
+.noToMobile {
+    @include mobile {
+        display: none;
     }
 }

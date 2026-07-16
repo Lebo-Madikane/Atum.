@@ -8,7 +8,7 @@ import Image from 'next/image';
 export default function Footer() {
 
     return (
-        <header className={styles.footer}>
+        <header id='contact' className={styles.footer}>
             <Image className={styles.footerbgImage} src='/footer-images/footer-bg-img.svg' alt="Footer Image" width={150} height={100} priority={true} />
             <div className={styles.container}>
                 <div className={styles.footerLinks}>

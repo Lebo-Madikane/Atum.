@@ -18,6 +18,11 @@
         pointer-events: none;
     }
 
+    .servicesText {
+        margin: 0 auto;
+        width: 90%;
+    }
+
     .container {
         text-align: center;
         width: 70%;
@@ -47,7 +52,7 @@
                 cursor: pointer;
 
                 @include mobile {
-                    width: 9rem;
+                    width: 19rem;
                 }
 
                 &:hover {
