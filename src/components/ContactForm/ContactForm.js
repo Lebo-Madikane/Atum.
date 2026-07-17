@@ -11,45 +11,78 @@ export default function ContactForm() {
         email: '',
         service: '',
         budget: '',
-        projectDescription: '',
+        message: ''
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null);
 
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbztUarNiUQil3-rOlf_eOwi_5K69HOvx7-RG1tqg5A_r6JhmqTHilbCF33Sm7QoEYUdAg/exec';
+
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+
+        if (submitStatus) {
+            setSubmitStatus(null);
+        }
+    };
+
+    const validateForm = () => {
+        const { fullName, email, service } = formData;
+
+        if (!fullName.trim() || !email.trim() || !service) {
+            return 'Please fill in all required fields.';
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return 'Please enter a valid email address.';
+        }
+
+        return null;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const validationError = validateForm();
+        if (validationError) {
+            alert(validationError);
+            return;
+        }
+
         setIsSubmitting(true);
+        setSubmitStatus(null);
 
         try {
-            const response = await fetch('/api/contact', {
+
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
+                headers: { 'Content-Type': 'text/plain' },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    email: formData.email,
+                    service: formData.service,
+                    budget: formData.budget,
+                    message: formData.message
+                })
             });
 
-            if (response.ok) {
+            const result = await response.json();
+
+            if (result.status === 'success') {
                 setSubmitStatus('success');
-                setFormData({
-                    fullName: '',
-                    email: '',
-                    service: '',
-                    budget: '',
-                    projectDescription: '',
-                });
+                setFormData({ fullName: '', email: '', service: '', budget: '', message: '' });
             } else {
                 setSubmitStatus('error');
             }
+
         } catch (error) {
             setSubmitStatus('error');
+            console.error('Submission error:', error);
         } finally {
             setIsSubmitting(false);
         }
@@ -64,6 +97,7 @@ export default function ContactForm() {
                         <h2>Let's Help You <span className={styles.brand}>Build</span></h2>
                         <p>Tell us about your vision.</p>
                     </div>
+
                     <form className={styles.contactForm} onSubmit={handleSubmit}>
                         <div className={styles.formGroup}>
                             <div className={styles.formfullName}>
@@ -79,6 +113,7 @@ export default function ContactForm() {
                                     className={styles.formInput}
                                     placeholder="Jane Smith"
                                     required
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div className={styles.formEmail}>
@@ -93,6 +128,7 @@ export default function ContactForm() {
                                     onChange={handleChange}
                                     className={styles.formInput}
                                     placeholder="jane@company.com"
+                                    disabled={isSubmitting}
                                     required
                                 />
                             </div>
@@ -108,6 +144,7 @@ export default function ContactForm() {
                                     value={formData.service}
                                     onChange={handleChange}
                                     className={styles.formSelect}
+                                    disabled={isSubmitting}
                                     required
                                 >
                                     <option value="">Select a service</option>
@@ -129,6 +166,7 @@ export default function ContactForm() {
                                     value={formData.budget}
                                     onChange={handleChange}
                                     className={styles.formSelect}
+                                    disabled={isSubmitting}
                                     required
                                 >
                                     <option value="">Select a budget range</option>
@@ -142,17 +180,18 @@ export default function ContactForm() {
                             </div>
                         </div>
                         <div className={styles.formDescription}>
-                            <label htmlFor="projectDescription" className={styles.formLabel}>
+                            <label htmlFor="message" className={styles.formLabel}>
                                 Tell Us About Your Project <span className={styles.formRequired}>*</span>
                             </label>
                             <textarea
-                                id="projectDescription"
-                                name="projectDescription"
-                                value={formData.projectDescription}
+                                id="message"
+                                name="message"
+                                value={formData.message}
                                 onChange={handleChange}
                                 className={styles.formTextarea}
                                 placeholder="What challenge are you trying to solve? What's your vision for this project?"
                                 rows="6"
+                                disabled={isSubmitting}
                                 required
                             ></textarea>
                         </div>
@@ -164,6 +203,8 @@ export default function ContactForm() {
                         >
                             {isSubmitting ? 'Sending...' : 'Start Your Journey'}
                         </Button>
+
+                        {/* Status Messages */}
 
                         {submitStatus === 'success' && (
                             <div className={styles.successMessage}>
