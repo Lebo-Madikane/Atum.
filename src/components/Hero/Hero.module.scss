@@ -173,6 +173,7 @@
     }
 }
 
+// Mobile Responsive Design
 
 @include mobile {
 
@@ -184,16 +185,20 @@
         &__content {
             height: fit-content;
 
+            &__availableContainer {
+                font-size: 0.8rem;
+            }
+
             h1 {
                 width: 100%;
-                font-size: 3rem;
+                font-size: 2.8rem;
                 line-height: 1.1;
                 margin: 10 auto;
             }
 
             p {
                 width: 100%;
-                font-size: 1rem;
+                font-size: 0.9rem;
                 padding: 0;
                 display: inline-block;
                 margin: 10px auto;
