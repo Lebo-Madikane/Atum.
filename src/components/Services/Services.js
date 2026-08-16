@@ -11,6 +11,7 @@ import LearnMore from '@/components/LearnMore/LearnMore';
 import ContactForm from '@/components/ContactForm/ContactForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPalette, faArrowTrendUp, faCode, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "motion/react";
 
 export default function Services() {
     // State for modal
@@ -76,7 +77,12 @@ export default function Services() {
 
     return (
         <>
-            <section id="services" className={styles.services}>
+            <motion.section id="services" className={styles.services}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: [0, 0, 0.2, 1] }}
+            >
                 <Image
                     className={styles.ServicebgImage}
                     src='/services-images/services-bg-image.svg'
@@ -134,7 +140,7 @@ export default function Services() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </motion.section>
 
             {/* Modal with LearnMore Component */}
             <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
