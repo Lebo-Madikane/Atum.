@@ -64,12 +64,17 @@
         &__paragraph {
             color: var(--color-text-primary);
             align-content: center;
-        }
-    }
-}
 
-.noToMobile {
-    @include mobile {
-        display: none;
+            @include mobile {
+
+                .noToMobile {
+                    display: none;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+        }
     }
 }
