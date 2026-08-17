@@ -1,6 +1,16 @@
 @use '../../styles/variables.scss' as *;
 @use '../../styles/mixins.scss' as *;
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.06;
+    }
+}
+
 .services {
     width: 100%;
     min-height: 600px;
@@ -18,6 +28,7 @@
         object-fit: cover;
         opacity: 0.06;
         pointer-events: none;
+        animation: fadeIn 2s ease-out both;
     }
 
     .servicesContainer {
@@ -86,6 +97,7 @@
                         border-radius: 10px 10px 0px 0px;
                         object-fit: cover;
                         transition: all 0.3s ease;
+                        animation: fadeUp 0.6s ease-out both;
                     }
 
                     .icon {
