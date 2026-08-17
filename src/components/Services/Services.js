@@ -91,53 +91,55 @@ export default function Services() {
                     height={100}
                     priority={true}
                 />
-                <h2 className={styles.servicesText}>Our Services</h2>
-                <p className={styles.servicesText}>From beautiful interfaces to scalable systems, we've got you covered.</p>
-                <div className={styles.container}>
-                    <div className={styles.content}>
-                        {services.map((service) => (
-                            <div key={service.id}>
-                                <Card className={styles.serviceCard}>
-                                    <div className={styles.serviceCardContent}>
-                                        <Image
-                                            className={styles.image}
-                                            src={service.image}
-                                            alt={`${service.style} Service`}
-                                            width={150}
-                                            height={100}
-                                            priority={true}
-                                        />
-                                        <h3 className={styles.subHeading}>
-                                            <FontAwesomeIcon
-                                                className={styles.icon}
-                                                icon={service.icon}
+                <div className={styles.servicesContainer}>
+                    <h2 className={styles.servicesText}>Our Services</h2>
+                    <p className={`${styles.servicesText} ${styles.headerP}`}>From beautiful interfaces to scalable systems, we've got you covered.</p>
+                    <div className={styles.contentContainer}>
+                        <div className={styles.content}>
+                            {services.map((service) => (
+                                <div key={service.id}>
+                                    <Card className={styles.serviceCard}>
+                                        <div className={styles.serviceCardContent}>
+                                            <Image
+                                                className={styles.image}
+                                                src={service.image}
+                                                alt={`${service.style} Service`}
+                                                width={150}
+                                                height={100}
+                                                priority={true}
                                             />
-                                            {service.subHeading}
-                                        </h3>
-                                        <h4 className={styles.style}>{service.style}</h4>
-                                        <p>{service.description}</p>
-                                        <div className={styles.flex}>
-                                            {/* Learn More Button - Opens Modal */}
-                                            <button
-                                                className={styles.learnMore}
-                                                onClick={() => handleLearnMore(service.serviceType)}
-                                                aria-label={`Learn more about ${service.style}`}
-                                            >
-                                                Learn More
-                                            </button>
-                                            <Button className={styles.arrowRight}
-                                                onClick={() => handleLearnMore(service.serviceType)}
-                                                aria-label={`Learn more about ${service.style}`}>
+                                            <h3 className={styles.subHeading}>
                                                 <FontAwesomeIcon
                                                     className={styles.icon}
-                                                    icon={faArrowRight}
+                                                    icon={service.icon}
                                                 />
-                                            </Button>
+                                                {service.subHeading}
+                                            </h3>
+                                            <h4 className={styles.style}>{service.style}</h4>
+                                            <p>{service.description}</p>
+                                            <div className={styles.flex}>
+                                                {/* Learn More Button - Opens Modal */}
+                                                <button
+                                                    className={styles.learnMore}
+                                                    onClick={() => handleLearnMore(service.serviceType)}
+                                                    aria-label={`Learn more about ${service.style}`}
+                                                >
+                                                    Learn More
+                                                </button>
+                                                <Button className={styles.arrowRight}
+                                                    onClick={() => handleLearnMore(service.serviceType)}
+                                                    aria-label={`Learn more about ${service.style}`}>
+                                                    <FontAwesomeIcon
+                                                        className={styles.icon}
+                                                        icon={faArrowRight}
+                                                    />
+                                                </Button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </Card>
-                            </div>
-                        ))}
+                                    </Card>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </motion.section>

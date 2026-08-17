@@ -19,16 +19,27 @@
         pointer-events: none;
     }
 
+    .servicesContainer {
+        //min-height: 550px;
+        margin: 4rem auto 8rem auto;
+        align-content: center;
+
+        @include mobile {
+            .headerP {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
     .servicesText {
         margin: 0 auto;
         width: 90%;
     }
 
-    .container {
+    .contentContainer {
         text-align: center;
         width: 70%;
-        margin: 20 auto;
-
+        margin: 10px auto;
 
         @include mobile {
             padding: 0;
