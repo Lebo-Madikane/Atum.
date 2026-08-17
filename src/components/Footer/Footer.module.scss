@@ -57,6 +57,7 @@
             height: fit-content;
             margin: 0px;
             display: flex;
+            border: 2px solid red;
 
             .footerImage {
                 width: 100%;
@@ -66,8 +67,7 @@
         }
 
         @include mobile {
-            width: 90%;
-            height: 50%;
+            //height: 50%;
         }
     }
 }
