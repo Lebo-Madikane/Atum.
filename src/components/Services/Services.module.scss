@@ -9,6 +9,7 @@
     margin: 0px auto;
     position: relative;
     animation: fadeUp 0.6s ease-out both;
+    //border: 2px solid red;
 
     .ServicebgImage {
         @include absolute-fill;
