@@ -1,6 +1,16 @@
 @use '../../styles/variables' as *;
 @use '../../styles/mixins' as *;
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .ctaForm {
     position: relative;
     isolation: isolate;
@@ -8,6 +18,7 @@
     min-height: 500px;
     align-content: center;
     background-image: url('/cta-images/ctaBgImg2.webp');
+    animation: fadeIn 2s ease-out both;
     //background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
