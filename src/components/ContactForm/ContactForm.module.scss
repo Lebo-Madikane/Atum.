@@ -181,3 +181,12 @@
         }
     }
 }
+
+// Responsive Design for Mobile
+
+@include mobile {
+
+    .contactFormSection {
+        width: 100%;
+    }
+}
