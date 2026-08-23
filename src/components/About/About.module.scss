@@ -62,12 +62,13 @@
         &__line {
             background-color: var(--color-primary);
             width: 7px;
-            height: 90%;
+            height: 180px;
             align-self: center;
 
             @include mobile {
-                //display: none;
+                display: none;
                 width: 10px;
+                height: 150px;
             }
         }
 
