@@ -85,7 +85,7 @@ export default function Services() {
             >
                 <Image
                     className={styles.ServicebgImage}
-                    src='/services-images/services-bg-image.svg'
+                    src='/services-images/services-bg-img.svg'
                     alt="Services Image"
                     width={150}
                     height={100}
